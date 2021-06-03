@@ -1,0 +1,9 @@
+{
+  "restartable": "rs",
+  "verbose": true,
+  "watch": [
+  ],
+  "ignore": [
+  ],
+  "ext": "js json"
+}
