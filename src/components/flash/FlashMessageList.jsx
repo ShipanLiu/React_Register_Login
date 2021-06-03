@@ -8,8 +8,6 @@ import React, { Component } from 'react'
 import FlashMessage from './FlashMessage'
 import { connect } from 'react-redux'
 import { deleteFlashMessage } from '../../actions/flashMessages'
-// import * as flashActions from '../../actions/flashMessages'
-
 class FlashMessageList extends Component {
   // message要存在redux里面。
   //  message是一个数组！

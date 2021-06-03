@@ -9,6 +9,7 @@ export default class FlashMessage extends Component {
     // 删除客户的操作： 需要有相应的action
     onclick = () => {
       this.props.deleteFlashMessage(this.props.message.id)
+      console.log('test')
     }
     return (
       <div

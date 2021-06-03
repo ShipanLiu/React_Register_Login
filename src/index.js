@@ -12,7 +12,6 @@ import { Provider } from 'react-redux'
 import routes from './routes'
 import { BrowserRouter } from 'react-router-dom'
 import NavBar from './components/NavBar'
-import FlashMessageList from './components/flash/FlashMessageList'
 
 // need a reducer, createStore's 2ed param have involve the middlewares
 const store = createStore(
@@ -24,7 +23,7 @@ ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>
       <NavBar></NavBar>
-      <FlashMessageList></FlashMessageList>
+      {/* <FlashMessageList></FlashMessageList> */}
       {routes}
     </Provider>
   </BrowserRouter>,

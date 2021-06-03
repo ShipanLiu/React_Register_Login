@@ -8,7 +8,6 @@ const flashMessageRedeucer = (state = [], action) => {
       // 三大原则，只能返回一个新的state
       return [
         ...state,
-        // 一组是一个人。
         {
           id: shortid.generate(),
           //  type就是action里面传来的数据
@@ -17,15 +16,15 @@ const flashMessageRedeucer = (state = [], action) => {
         },
       ]
     case DELETE_FLASH_MESSAGE:
-      // const index = findIndex(state, { id: action.id })
-      // if (index >= 0) {
-      // ...state.slice(index + 1) 表示后面的全部取到。
-      //   return [...state.slice(0, index), ...state.slice(index + 1)]
-      // } else {
-      //   return state
-      // }
-      const filteredUser = state.filter((stateObj) => stateObj.id !== action.id)
-      return filteredUser
+      const index = findIndex(state, { id: action.id })
+      if (index >= 0) {
+        //...state.slice(index + 1) 表示后面的全部取到
+        return [...state.slice(0, index), ...state.slice(index + 1)]
+      } else {
+        return state
+      }
+    // const filteredUser = state.filter((stateObj) => stateObj.id !== action.id)
+    // return filteredUser
 
     default:
       return state

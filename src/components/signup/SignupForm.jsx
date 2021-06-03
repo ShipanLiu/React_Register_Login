@@ -16,6 +16,7 @@ class SignupForm extends Component {
     pwdAgain: '',
     errors: {},
     isLoading: false,
+    id: '',
   }
 
   // 注意
@@ -34,12 +35,12 @@ class SignupForm extends Component {
     // change the isLoading state
     this.setState({ errors: {}, isLoading: true })
     // 更改redux里面储存的东西。
-    // this.props.signupActions.userSignupRequest(this.state)
-    this.props.signupActions
+    // this.props.userSignupRequest(this.state)
+    this.props
       .userSignupRequest(this.state)
       .then(() => {
         // 把信息存到redux里面
-        this.props.flashActions.addFlashMessage({
+        this.props.addFlashMessage({
           type: 'success',
           text: 'welcome to us!',
         })
